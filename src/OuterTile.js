@@ -46,7 +46,7 @@ class OutterTile extends Component {
           backgroundColor: backgroundColor
         }}
       >
-        <InnerTile show={this.state.showSVG} />
+        <InnerTile id={this.props.id} show={this.state.showSVG} />
       </div>
     );
   }
