@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import TileMoveAnimations from "./TileMoveAnimations";
 import TileScaleAnimations from "./TileScaleAnimations";
+import ExpandingAnimation from "./ExpandingAnimation.js"
 import InnerTile from "./InnerTile.js";
 
 class OutterTile extends Component {
@@ -10,8 +11,9 @@ class OutterTile extends Component {
   }
 
   componentDidUpdate(nextProps) {
-    let { className, animationIndex } = this.props;
-    this.animate(animationIndex, className);
+    let { className, animationIndex, rowAmount } = this.props;
+   ExpandingAnimation.expand(animationIndex, className, rowAmount, this.state.id);
+ // this.animate(animationIndex, className)
   }
   componentDidMount() {
     this.setState({
