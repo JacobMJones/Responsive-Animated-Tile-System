@@ -4,6 +4,7 @@ export default {
   up(target, duration, distance, opacity, scale, cb) {
     return TweenMax.to(`.${target}`, duration, {
       top: distance,
+      // rotationY:'+=180',
       opacity:opacity,
       scale:scale,
       ease:Back.easeInOut,
@@ -34,6 +35,7 @@ export default {
     return TweenMax.to(`.${target}`, duration, {
       left: distance,
       ease:Back.easeInOut,
+      // rotationY:'+=180',
       onComplete() {
       }
     })

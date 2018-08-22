@@ -7,12 +7,17 @@ import InnerTile from "./InnerTile.js";
 class OutterTile extends Component {
   constructor(props) {
     super(props);
-    this.state = { inInitialPosition: true };
+    this.state = {
+    inInitialPosition: true,
+    };
+  
   }
-
+  faceVisibile = false
   componentDidUpdate(nextProps) {
     let { className, animationIndex, rowAmount } = this.props;
+    
    ExpandingAnimation.expand(animationIndex, className, rowAmount, this.state.id);
+   this.faceVisibile = !this.faceVisibile
   }
   componentDidMount() {
     this.setState({
@@ -31,6 +36,7 @@ class OutterTile extends Component {
   render() {
     let { backgroundColor } = this.state;
     let { className, leftDistanceMultiplier } = this.props;
+
     return (
       <div
         className={className}
@@ -46,7 +52,7 @@ class OutterTile extends Component {
           backgroundColor: backgroundColor
         }}
       >
-        <InnerTile id={this.props.id} show={this.state.showSVG} />
+        <InnerTile  faceVisible= {this.faceVisibile} id={this.props.id} show={this.state.showSVG} />
       </div>
     );
   }

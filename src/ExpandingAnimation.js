@@ -18,8 +18,6 @@ export default
     } else {
       let distanceFromMultiple = id % rowAmount;
       let distanceFromClicked = id - animationIndex;
-      console.log("distance from click", distanceFromClicked, typeof distanceFromClicked);
-  
       //moves left column
       if (distanceFromMultiple === 0) {
           console.log('in distance from multiple')

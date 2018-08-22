@@ -18,6 +18,7 @@ class FlexContainer extends Component {
           rowAmount={this.props.rows}
           amountOfOutterTiles={this.props.columns}
           colors={["lightpink", "lightpink", "lightpink"]}
+          
         />
       );
     });
