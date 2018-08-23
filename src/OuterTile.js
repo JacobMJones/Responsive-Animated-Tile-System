@@ -1,24 +1,26 @@
 import React, { Component } from "react";
-import TileMoveAnimations from "./TileMoveAnimations";
-import TileScaleAnimations from "./TileScaleAnimations";
-import ExpandingAnimation from "./ExpandingAnimation.js"
+import ExpandingAnimation from "./ExpandingAnimation.js";
 import InnerTile from "./InnerTile.js";
 
-class OutterTile extends Component {
+class OuterTile extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-   
-    };
-    
+    this.state = {};
   }
-  faceVisibile = false
-  componentDidUpdate(nextProps) {
-    let { className, animationIndex, rowAmount, initialPosition } = this.props;
-    
-   ExpandingAnimation.expand(animationIndex, className, rowAmount, this.state.id);
-   this.faceVisibile = !this.faceVisibile
-  
+
+  faceVisibile = false;
+
+  componentDidUpdate() {
+    let { className, animationIndex, rowAmount } = this.props;
+
+    ExpandingAnimation.expand(
+      animationIndex,
+      className,
+      rowAmount,
+      this.state.id
+    );
+
+    this.faceVisibile = !this.faceVisibile;
   }
   componentDidMount() {
     this.setState({
@@ -29,21 +31,17 @@ class OutterTile extends Component {
       inInitialPosition: true,
       showSVG: true
     });
-    
   }
 
-  clickHandler = () => {
-    this.props.masterClickHandler(this.state.id);
-  };
   render() {
     let { backgroundColor } = this.state;
-    let { className, leftDistanceMultiplier } = this.props;
+    let { className } = this.props;
 
     return (
       <div
         className={className}
         onClick={() => {
-          this.clickHandler(className);
+          this.props.masterClickHandler(this.state.id);
         }}
         style={{
           position: "relative",
@@ -54,12 +52,14 @@ class OutterTile extends Component {
           backgroundColor: backgroundColor
         }}
       >
-  
-        <InnerTile  faceVisible= {this.faceVisibile} id={this.props.id} show={this.state.showSVG} />
+        <InnerTile
+          faceVisible={this.faceVisibile}
+          id={this.props.id}
+          show={this.state.showSVG}
+        />
       </div>
     );
   }
 }
 
-export default OutterTile;
-
+export default OuterTile;

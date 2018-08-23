@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ReactSVG from "react-svg";
 import TileScaleAnimations from "./TileScaleAnimations.js";
-import TileTexture from "./tile-texture.png";
+
 
 class InnerTile extends Component {
   constructor(props) {

@@ -9,6 +9,7 @@ class FlexContainer extends Component {
     };
   }
   prepareHtml = () => {
+    console.log('in prepareHtml flex container')
     let rowArray = new Array(this.props.rows).fill().map((item, index) => {
       return (
         <RowContainer

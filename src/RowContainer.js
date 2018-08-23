@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import OuterTile from "./OuterTile.js";
-import FlexContainer from "./FlexContainer.jsx";
+
 class RowContainer extends Component {
   constructor(props) {
     super(props);
