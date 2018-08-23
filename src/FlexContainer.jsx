@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import RowContainer from "./RowContainer.js";
-import TileMoveAnimations from './TileMoveAnimations'
+import TileScaleAnimations from "./TileScaleAnimations.js";
+
 class FlexContainer extends Component {
   constructor(props) {
     super(props);
@@ -9,7 +10,6 @@ class FlexContainer extends Component {
     };
   }
   prepareHtml = () => {
-    console.log('in prepareHtml flex container')
     let rowArray = new Array(this.props.rows).fill().map((item, index) => {
       return (
         <RowContainer
@@ -25,14 +25,17 @@ class FlexContainer extends Component {
     });
     return rowArray;
   };
-
+  
   masterClickHandler = id => {
     if (this.state.initialPosition) {
+     TileScaleAnimations.opacity("face", .2, 0, 0.25);
       this.setState({ animationIndex: id, initialPosition:false });
     } else {
+     TileScaleAnimations.opacity("face", 0.2, 1, 0);
         this.setState({ animationIndex: 100, initialPosition:true });
     }
   };
+
   render() {
     const { height, width, paddingTop, paddingLeft } = this.props;
     return (

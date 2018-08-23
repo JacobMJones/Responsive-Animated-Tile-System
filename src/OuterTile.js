@@ -7,9 +7,6 @@ class OuterTile extends Component {
     super(props);
     this.state = {};
   }
-
-  faceVisibile = false;
-
   componentDidUpdate() {
     let { className, animationIndex, rowAmount } = this.props;
 
@@ -19,8 +16,6 @@ class OuterTile extends Component {
       rowAmount,
       this.state.id
     );
-
-    this.faceVisibile = !this.faceVisibile;
   }
   componentDidMount() {
     this.setState({
@@ -36,7 +31,6 @@ class OuterTile extends Component {
   render() {
     let { backgroundColor } = this.state;
     let { className } = this.props;
-
     return (
       <div
         className={className}
