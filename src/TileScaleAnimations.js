@@ -8,9 +8,10 @@ export default {
       }
     })
   },
-  opacity(target, duration, amount, cb) {
+  opacity(target, duration, amount, delay,  cb) {
     return TweenMax.to(`.${target}`, duration, {
      opacity: amount,
+     delay: delay,
       onComplete() {
       }
     })

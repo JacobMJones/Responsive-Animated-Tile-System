@@ -11,13 +11,11 @@ class RowContainer extends Component {
   }
 
   prepareHtml = () => {
-
     let tileArray = new Array(this.props.amountOfOutterTiles)
       .fill()
       .map((item, index) => {
-        return <OuterTile leftDistanceMultiplier={index+1} rowAmount={this.props.rowAmount} animationIndex={this.props.animationIndex} masterClickHandler={this.props.masterClickHandler} id={this.createID(index, this.props.rowNumber)} className={`tile-c${index}-r${this.props.rowNumber}`} initialColor={this.props.colors[index]} />;
+        return <OuterTile initialPosition={this.props.initialPosition} leftDistanceMultiplier={index+1} rowAmount={this.props.rowAmount} animationIndex={this.props.animationIndex} masterClickHandler={this.props.masterClickHandler} id={this.createID(index, this.props.rowNumber)} className={`tile-c${index}-r${this.props.rowNumber}`} initialColor={this.props.colors[index]} />;
       });
-
     return tileArray;
   }
 

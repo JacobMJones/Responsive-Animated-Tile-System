@@ -21,10 +21,10 @@ class App extends Component {
         <FlexContainer 
         rows={3}
         columns={3}
-        height={'80%'}
-        width={'80%'}
-        paddingTop={'10vh'}
-        paddingLeft={'10vw'}
+        height={'70%'}
+        width={'70%'}
+        paddingTop={'15vh'}
+        paddingLeft={'15vw'}
         />
         
       </div>

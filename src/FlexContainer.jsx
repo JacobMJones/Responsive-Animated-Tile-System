@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import RowContainer from "./RowContainer.js";
-
+import TileMoveAnimations from './TileMoveAnimations'
 class FlexContainer extends Component {
   constructor(props) {
     super(props);
@@ -17,8 +17,8 @@ class FlexContainer extends Component {
           rowNumber={index}
           rowAmount={this.props.rows}
           amountOfOutterTiles={this.props.columns}
-          colors={["lightpink", "lightpink", "lightpink"]}
-          
+          colors={['transparent', 'transparent', 'transparent']}
+          initialPosition = {this.state.initialPosition}
         />
       );
     });

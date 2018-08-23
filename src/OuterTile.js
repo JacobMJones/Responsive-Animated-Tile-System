@@ -8,16 +8,17 @@ class OutterTile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-    inInitialPosition: true,
+   
     };
-  
+    
   }
   faceVisibile = false
   componentDidUpdate(nextProps) {
-    let { className, animationIndex, rowAmount } = this.props;
+    let { className, animationIndex, rowAmount, initialPosition } = this.props;
     
    ExpandingAnimation.expand(animationIndex, className, rowAmount, this.state.id);
    this.faceVisibile = !this.faceVisibile
+  
   }
   componentDidMount() {
     this.setState({
@@ -28,6 +29,7 @@ class OutterTile extends Component {
       inInitialPosition: true,
       showSVG: true
     });
+    
   }
 
   clickHandler = () => {
@@ -52,6 +54,7 @@ class OutterTile extends Component {
           backgroundColor: backgroundColor
         }}
       >
+  
         <InnerTile  faceVisible= {this.faceVisibile} id={this.props.id} show={this.state.showSVG} />
       </div>
     );
