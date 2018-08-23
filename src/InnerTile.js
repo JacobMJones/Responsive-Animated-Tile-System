@@ -21,14 +21,14 @@ class InnerTile extends Component {
       ],
       myBack:[
         "topleftback6.png",
-        "topmidback2.png",
+        "topmidback.png",
         "toprightback.png",
         "midleftback.png",
-        "midmidback2.png",
-        "midrightback2.png",
+        "mmback.png",
+        "midrightback.png",
         "bottomleftback.png",
-        "bottommidback5.png",
-        "bottomrightback5.png",
+        "bottommidback.png",
+        "bottomrightback.png",
       ],
 
       cardSVGs: [
