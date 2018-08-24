@@ -8,32 +8,24 @@ class InnerTile extends Component {
     super(props);
     this.state = {};
   }
-
-  componentDidUpdate(nextProps) {
-    // if (!this.props.faceVisible) {
-    //   TileScaleAnimations.opacity("face", 0.2, 1, 0);
-    //   TileScaleAnimations.opacity("back", 0, 0, 0);
-    // } else {
-    //   TileScaleAnimations.opacity("face", 0, 0, 0.2);
-    //   TileScaleAnimations.opacity("back", 0.2, 1, 0);
-    // }
-  }
   prepareHtml = () => {
     return (
       <div>
         <div>
           <img
             className="face"
-            style={{zIndex:'100', position: "absolute", width: "100%", height: "80%"}}
+            style={{
+              zIndex: "100",
+              position: "absolute",
+              width: "100%",
+              height: "80%"
+            }}
             src={ImageArrays.frontImage[this.props.id]}
           />
         </div>
-        <div
-        
-          style={{position: "absolute", width: "100%", height: "80%"}}
-          
-        >
-          <img className="back"
+        <div style={{ position: "absolute", width: "100%", height: "80%" }}>
+          <img
+            className="back"
             style={{
               position: "relative",
               textAlign: "center",
@@ -46,7 +38,6 @@ class InnerTile extends Component {
       </div>
     );
   };
-
   render() {
     return (
       <div style={{ position: "relative", height: "125%" }}>
